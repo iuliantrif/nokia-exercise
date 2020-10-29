@@ -1,0 +1,11 @@
+
+<div class="container">
+    <div class="form-group">  
+        <h1 class="text-center text-primary mt-4 mb-4">TO DO LIST</h1> 
+        <div> 
+            <todo-input (addItem)="onCreateItem($event)"></todo-input>
+            
+        </div>
+    </div>
+    <todo-list [itemList]="items" (deleteItem)="onDeleteItem($event)" (deleteGlobal)="deleteGlobal($event)" (editItem)="editItem($event)"></todo-list><!-- use the deleteItem output (deleteItem)="onDeleteItem($event)" -->
+</div>

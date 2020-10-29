@@ -1,0 +1,9 @@
+<div class="input-group-prepend">       
+    <input type="text" class="form-control" placeholder="NEW ITEM" [(ngModel)]="inputText">      
+    <button class="btn btn-primary" 
+        (click)="onClickAdd()" 
+        (keyup.enter)="onClickAdd()" 
+        [disabled]="inputText.length==0">
+        ADD
+    </button>
+</div>

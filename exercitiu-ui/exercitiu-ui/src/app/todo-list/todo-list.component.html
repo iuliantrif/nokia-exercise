@@ -1,0 +1,23 @@
+<script>
+    function show() {
+      var x = document.getElementsByClassName("form-text");
+      console.log(x);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+</script>       
+<h2 *ngIf="itemList.length==0">list is empty</h2>
+<div>  
+    <ul class="list-group">   
+        <li class="list-group-item" *ngFor="let item of itemList.reverse()">{{item.name}}
+            <button class="btn btn-primary ml-auto mr-1" (click)="onEditItem(item.id, newInput)">UPDATE</button>
+            <input type="text" class="form-text mr-2 ml-1" [(ngModel)]="newInput" placeholder="NEW VALUE">
+            <button class="btn btn-danger" (click)="onClickDelete(item.id)" (keyup.enter)="onClickDelete(item.id)">DELETE</button>
+            <button class="btn btn-success ml-1" type="submit">DONE</button>
+        </li>  
+    </ul>
+    <button class="btn btn-danger mt-3" (click)="onClickDeleteAll()" (keyup.enter)="onClickDeleteAll()">DELETE ALL</button>  
+</div>
